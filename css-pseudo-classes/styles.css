@@ -1,0 +1,23 @@
+button {
+  padding: 15px;
+  font-size: 17px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+tbody {
+  background-color:#d1c8fa;
+}
+
+tr:nth-child(2n){
+  background-color: white;
+}
+
+thead {
+  color: white;
+  background-color: black;
+  margin: 10px;
+}
