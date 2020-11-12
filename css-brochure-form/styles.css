@@ -19,6 +19,11 @@ h2{
   text-align: center;
 }
 
+label {
+  padding-left: 10px;
+  font-size: 11px;
+}
+
 div.button {
   text-align: end;
 }
@@ -34,7 +39,7 @@ div > button{
   font-size: 12px;
 }
 
-input, #numOfHire {
+input, select {
   border-radius: 6px;
   border-style: solid;
   border-width: thin;
@@ -45,6 +50,6 @@ input, #numOfHire {
   width: 100%;
 }
 
-#numOfHire {
+select {
   background-color: rgb(240, 238, 238);
 }
