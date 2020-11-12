@@ -1,0 +1,35 @@
+h1 {
+  text-align: left;
+  padding: 0 20px;
+}
+
+.container{
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.box {
+  width: 80%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column_one_fourth {
+  width: 25%;
+}
+
+.column_one_third {
+  width: calc(100% / 3);
+}
+
+.column_one_third > .text{
+  text-align: left;
+}
+
+h3.text {
+  text-transform: capitalize;
+}
