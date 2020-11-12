@@ -1,0 +1,55 @@
+body {
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 1.75;
+}
+
+fieldset {
+  width: 35%;
+  box-sizing: border-box;
+  border: none;
+  align-items: center;
+  margin: auto;
+}
+
+h2{
+  color: rgb(255, 108, 92);
+  text-align: center;
+}
+
+label {
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+div.button {
+  text-align: end;
+}
+
+div > button{
+  background-color: rgb(236, 93, 87);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 16px;
+  border-style: none;
+  font-family: 'AtlasGrotesk';
+  font-weight: 600;
+  font-size: 12px;
+}
+
+input, select {
+  border-radius: 6px;
+  border-style: solid;
+  border-width: thin;
+  border-color: lightgray;
+  margin-bottom: 18px;
+  padding: 8.7px;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+select {
+  background-color: rgb(240, 238, 238);
+}
