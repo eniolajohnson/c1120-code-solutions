@@ -1,21 +1,22 @@
-h1 {
-  text-align: left;
-  padding: 0 20px;
-}
-
 .container{
   max-width: 800px;
   margin: auto;
   text-align: center;
 }
 
-.box {
+.row {
+  display: flex;
   width: 80%;
   margin: auto;
 }
 
-.row {
-  display: flex;
+.column_full {
+  width: 100%;
+  text-align: left;
+}
+
+.column_half {
+  width: 50%;
 }
 
 .column_one_fourth {
@@ -32,4 +33,8 @@ h1 {
 
 h3.text {
   text-transform: capitalize;
+}
+
+img {
+  width: 100%;
 }
