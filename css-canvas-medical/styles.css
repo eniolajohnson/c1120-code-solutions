@@ -131,7 +131,7 @@ button {
   font-weight: 800;
 }
 
-#blue {
+.ready_to_learn {
   padding: 0;
   width: 80%;
   margin: auto;
@@ -141,22 +141,22 @@ button {
 
 }
 
-#blue h2,
-#blue p{
+.ready_to_learn h2,
+.ready_to_learn p{
   text-align: start;
   margin-right: 9em;
 }
 
-#blue h2{
+.ready_to_learn h2{
   font-weight: 800;
   margin-bottom: 12px;
 }
 
-#blue p {
+.ready_to_learn p {
   font-size: 12px;
 }
 
-#blue button{
+.ready_to_learn button{
   margin-top: 37px;
   margin-left: 20em;
   text-align: center;
