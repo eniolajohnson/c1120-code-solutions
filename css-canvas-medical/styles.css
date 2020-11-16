@@ -1,5 +1,6 @@
 body {
   font-family: avenir;
+  color: white;
 }
 
 hr {
@@ -333,4 +334,68 @@ button {
 
 .container_2 > #product_4 h2 {
   margin-top: 10%;
+}
+
+/* Styles for implementation.html */
+
+.section_implement_1 {
+  background-image: url(./images/implementation/implementation-header.jpg);
+  background-position: center;
+  margin: auto;
+  background-size: 92%;
+  filter: brightness(70%);
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+  height: 480px;
+  margin-top: 5%;
+}
+
+.section_implement_1 > .column_half {
+  width: 50%;
+  margin-left: 100px;
+}
+
+.section_implement_1  h1 {
+  width: 100%;
+  /* border: 1px solid pink; */
+  padding: 80px 0 0;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.section_implement_1  p {
+  font-size: 1em;
+}
+
+.section_implement_2 {
+  color: rgb(110, 110, 110);
+}
+
+.section_implement_2 > .column_full {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 12%;
+}
+
+.section_implement_2 > .column_full > .head{
+  margin: auto;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.column_full > .implement_2_body{
+  width: 75%;
+  margin-top: 2%;
+  margin: auto;
+}
+
+.column_full > .implement_2_body > p{
+  text-align: left;
+  font-size: 13px;
+}
+
+.column_full > .implement_2_body > h1 > span {
+  font-size: 15px;
+  font-weight: normal;
 }
