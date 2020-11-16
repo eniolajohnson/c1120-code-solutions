@@ -1,0 +1,40 @@
+.container{
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.column_full {
+  width: 100%;
+  text-align: left;
+}
+
+.column_half {
+  width: 50%;
+}
+
+.column_one_fourth {
+  width: 25%;
+}
+
+.column_one_third {
+  width: calc(100% / 3);
+}
+
+.column_one_third > .text{
+  text-align: left;
+}
+
+h3.text {
+  text-transform: capitalize;
+}
+
+img {
+  width: 100%;
+}
