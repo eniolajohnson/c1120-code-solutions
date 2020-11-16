@@ -199,7 +199,7 @@ button {
 
 .section_4 address > p {
   font-size: 12px;
-  padding-top: 30px;
+  padding-top: 20px;
   font-style: normal;
   line-height: 1.6em;
   width: 100%;
@@ -207,7 +207,8 @@ button {
 }
 
 .section_4 img{
-    width: 100px;
+  margin-top: 5%;
+  width: 120px;
 }
 
 .section_4 .column_quarter{
