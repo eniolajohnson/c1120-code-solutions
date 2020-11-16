@@ -401,6 +401,7 @@ button {
 }
 
 /* Styles for about-us.html */
+
 .section_about_1 {
   background-image: url(./images/about-us/about-us-header.jpg);
   background-position: center;
@@ -521,4 +522,85 @@ button {
   font-weight: bolder;
   padding-top: 2%;
   text-align: center;
+}
+
+/* Styles for blog.html */
+
+.section_blog_1 > .column_full {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  color: rgb(87, 58, 58);
+  line-height: 1em;
+}
+
+.section_blog_1 > .column_full h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  color: rgb(110, 110, 110);
+  padding: 0;
+  margin-top: 8%;
+}
+
+.section_blog_1 > .column_full a{
+  text-decoration: none;
+  padding-bottom: 150px;
+  font-size: 14px;
+}
+
+.section_blog_1 > .column_full ::placeholder {
+  font-size: 1.5em;
+  color: rgb(191, 192, 191);
+}
+
+.section_blog_1 > .column_full hr {
+  width: 80%;
+}
+
+.section_blog_1 > .column_full input {
+  border-style: none;
+  width: 80%;
+  text-align: center;
+  padding: 50px 0 10px;
+}
+
+.section_blog_2 {
+  margin: auto;
+  margin-top: 8%;
+}
+.section_blog_2 > .row {
+  width: 70%;
+  display: flex;
+  margin: auto;
+}
+
+.section_blog_2 > .row > img {
+  width: 47%;
+  margin: auto;
+}
+
+.section_blog_2 > .row > img:last-child {
+  width: 47%;
+  margin: auto;
+  height: 250px;
+}
+
+.section_blog_2 .row > h1 {
+  text-align: start;
+  width: 55%;
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-left: 1.5%;
+  color: rgb(41, 68, 100);
+}
+
+.section_blog_2 .row > p {
+  text-align: center;
+  width: 55%;
+  text-align: start;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 1.5%;
+  font-size: 13px;
+  color: rgb(41, 68, 100);
 }
