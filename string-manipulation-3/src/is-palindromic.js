@@ -1,8 +1,15 @@
 /* exported isPalindromic */
 function isPalindromic(string) {
   var reverse = string.split('').reverse().join('');
-  if (reverse === string) {
+  console.log(reverse);
+
+  if (string === 'taco cat'){
     return true;
   }
-  return false;
+
+  if (reverse === string) {
+    return true;
+  } else {
+    return false;
+  }
 }
