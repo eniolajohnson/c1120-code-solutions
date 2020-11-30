@@ -1,8 +1,6 @@
 /* exported difference */
 function difference(first, second) {
   var array = [...first, ...second];
-  var newArray = [... new Set(array)];
-  console.log(newArray);
   var arr1 = [];
   var arr2 = [];
   for (var i = 0; i < array.length; i++) {
@@ -11,13 +9,13 @@ function difference(first, second) {
     }
     arr1.push(array[i]);
   }
-  for (var i = 0; i < newArray.length; i++) {
-    if (newArray[i] == (arr2[i])) {
-      newArray.splice(i, 1);
-      i++;
+  var newArr = [... new Set(arr1)];
+  for (var i = 0; i < newArr.length; i++) {
+    if ((newArr[i] === arr2[0]) || (newArr[i] === arr2[1])) {
+      newArr.splice(i, 1);
     }
   }
-  return newArray;
+  return newArr;
 }
 // function difference(first, second) {
 //   var array = [...first, ...second];
