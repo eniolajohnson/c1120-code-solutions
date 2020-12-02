@@ -26,9 +26,9 @@ console.log("Type of 'JSONed books' is", typeof (jsonBooks));
 var student = '{"numberID":987, "name":"Brian Bert"}';
 
 console.log('The student is', student);
-console.log("Type of student is", typeof (student));
+console.log("Type of student is", typeof(student));
 
-const studentParsed = JSON.parse(student);
+var studentParsed = JSON.parse(student);
 
 console.log('The parsed student is', studentParsed);
-console.log("Type of parsed student is", typeof (studentParsed));
+console.log("Type of parsed student is", typeof(studentParsed));
