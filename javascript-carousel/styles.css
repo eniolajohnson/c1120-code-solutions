@@ -1,0 +1,14 @@
+.view-container>.view{
+  text-align: center;
+}
+
+span{
+  border: 2px solid red;
+  /* border-style: none; */
+  font-size: 3rem;
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
