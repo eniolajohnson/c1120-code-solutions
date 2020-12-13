@@ -1,0 +1,25 @@
+button{
+    border: none;
+    background-color: white;
+    font-size: 5rem;
+    margin-top: 40%;
+}
+
+.row{
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.third-column {
+  width: 33%;
+  border: 2px solid salmon;
+  text-align: center;
+}
+
+.default{
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
