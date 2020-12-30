@@ -44,5 +44,7 @@ console.log('book 3:', book3);
 console.log('book 4:', book4);
 console.log('book 5:', book5);
 
+// correct answer is const [3:book6] = library; OR
+// const [, , , book6] = library;
 const book6 = library[3];
 console.log('book 6:', book6);
