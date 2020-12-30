@@ -1,8 +1,18 @@
 button{
-    border: none;
+    border: 1px solid white;
     background-color: white;
     font-size: 5rem;
     margin-top: 40%;
+    /* border-style: none; */
+}
+
+.borderless{
+  border: 1px solid white;
+}
+
+button:hover{
+  cursor: pointer;
+  border: 1px solid white;
 }
 
 .row{
@@ -12,7 +22,7 @@ button{
 
 .third-column {
   width: 33%;
-  border: 2px solid salmon;
+  /* border: 2px solid salmon; */
   text-align: center;
 }
 
