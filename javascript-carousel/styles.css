@@ -1,29 +1,30 @@
-button{
-    border: 1px solid white;
-    background-color: white;
-    font-size: 5rem;
-    margin-top: 40%;
-    /* border-style: none; */
-}
-
-.borderless{
-  border: 1px solid white;
-}
-
-button:hover{
-  cursor: pointer;
-  border: 1px solid white;
-}
-
 .row{
   display: flex;
-  /* flex-direction: column; */
 }
 
 .third-column {
   width: 33%;
-  /* border: 2px solid salmon; */
   text-align: center;
+}
+
+.button{
+    font-size: 5rem;
+    font-size: 4em;
+    margin: auto;
+    color: black;
+}
+
+.button .fas {
+  margin-top: 39%;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.circle {
+  margin-right: 0.2em;
+  font-size: 0.9em;
 }
 
 .default{
