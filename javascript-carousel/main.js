@@ -13,8 +13,6 @@ let firstC = $circles[0],
   thirdC = $circles[2],
   fourthC = $circles[3],
   fifthC = $circles[4];
-  console.log(firstC);
-  console.log(secondC);
 
 function updateImage() {
   count++;
