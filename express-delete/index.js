@@ -22,20 +22,19 @@ const grades = {
   }
 }
 
-const gradesArray = [];
-for (const grade in grades) {
-  gradesArray.push(grades[grade]);
-}
-
 app.get('/api/grades', (req, res) => {
+  const gradesArray = [];
+  for (const grade in grades) {
+    gradesArray.push(grades[grade]);
+  }
   res.json(gradesArray);
 })
 
 app.delete('/api/grades/:id', (req, res) => {
-  const toDel = parseInt(req.params.id)
-  for (let i = 0; i < gradesArray.length; i++){
-    if (gradesArray[i].id === toDel){
-      gradesArray.splice(i, 1);
+  const toDel = req.params.id;
+  for (const grade in grades){
+    if (grade === toDel) {
+      delete grades[grade];
     }
   }
 
