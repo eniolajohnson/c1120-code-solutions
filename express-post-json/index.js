@@ -15,14 +15,13 @@ app.get('/api/grades', (req, res) => {
 })
 
 app.post('/api/grades', (req, res) => {
-  const newObject = req.body;
+  const studentGrade = req.body;
   let uid = nextId;
-  newObject.id = nextId++;
-  grades[uid] = newObject;
-  res.send(grades[uid]);
-  res.status(201);
+  studentGrade.id = nextId++;
+  grades[uid] = studentGrade;
+  res.status(201).send(studentGrade);
 })
 
 app.listen(3000, ()=>{
-  console.log('listening on port 3000');
+  console.log(`listening on port 3000`);
 })
