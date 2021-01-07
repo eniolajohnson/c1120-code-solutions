@@ -2,23 +2,27 @@ const express = require('express');
 const app = express();
 
 let nextId = 1;
-const grades = [];
+const grades = {};
 
 app.use(express.json());
 
 app.get('/api/grades', (req, res) => {
-  res.json(grades);
+  const gradesArray = [];
+  for (const grade in grades){
+    gradesArray.push(grades[grade])
+  }
+  res.json(gradesArray);
 })
 
 app.post('/api/grades', (req, res) => {
-  const anonObject = req.body;
-  anonObject.id = nextId++;
-  grades.push(anonObject);
-  res.send(anonObject)
+  const newObject = req.body;
+  let uid = nextId;
+  newObject.id = nextId++;
+  grades[uid] = newObject;
+  res.send(grades[uid]);
   res.status(201);
 })
 
 app.listen(3000, ()=>{
   console.log('listening on port 3000');
 })
-
