@@ -35,19 +35,16 @@ app.post('/api/notes', (req, res) => {
   if (newNote.content){
     notes[uid] = newNote;
     newNote.id = nextId++;
-    res.status(201).json(newNote);
-
     let data = JSON.stringify(content, null, 2);
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err
+        throw err;
       };
+      res.status(201).json(newNote);
     });
-  } else if (!newNote.content) {
-    res.status(400).json({ "error": "content is a required field" })
   } else {
-    res.status(500).json({ "error": "An unexpected error occurred." })
+    res.status(400).json({ "error": "content is a required field" })
   }
 })
 
@@ -65,13 +62,14 @@ app.delete('/api/notes/:id', (req, res) => {
       })
   } else {
     delete notes[id];
-    res.sendStatus(204);
+
     let data = JSON.stringify(content, null, 2);
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err
-      };
+        throw err;
+      }
+      res.sendStatus(204);
     });
   }
 })
@@ -88,25 +86,22 @@ app.put('/api/notes/:id', (req, res)=>{
     res.status(400).json({
       "error": "content is a required field"
     })
-  } else if (!notes[id] && contentEdit.content){
+  } else if (!notes[id]){
     res.status(404).json({
       "error": `cannot find note with id ${id}`
     })
-  } else if (notes[id] && contentEdit.content){
+  } else {
     notes[id] = contentEdit;
     contentEdit.id = id;
-    res.status(200).json(notes[id]);
+
     let data = JSON.stringify(content, null, 2);
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err
-      };
+        throw err;
+      }
+      res.status(200).json(notes[id]);
     });
-  } else {
-    res.status(500).json({
-      "error": "An unexpected error occurred."
-    })
   }
 })
 
