@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 
 const content = require('./data.json');
 const notes = content.notes;
-let nextId = 3;
+let nextId = 10;
 
 app.use(express.json());
 
@@ -12,7 +13,6 @@ app.get('/api/notes', (req, res) => {
   for (note in notes){
     apiArray.push(notes[note]);
   }
-  console.log('running');
   res.json(apiArray);
 });
 
@@ -32,15 +32,63 @@ app.post('/api/notes', (req, res) => {
   const newNote = req.body;
   let uid = nextId;
 
-
   if (JSON.stringify(newNote) === '{}'){
     res.status(400).json({ "error": "content is a required field" })
   } else if (req.body) {
     notes[uid] = newNote;
     newNote.id = nextId++;
-    res.json(newNote);
+    res.status(201).json(newNote);
   } else {
     res.status(500).json({ "error": "An unexpected error occurred." })
+  }
+})
+
+app.delete('/api/notes/:id', (req, res) => {
+  const id = req.params.id;
+  const idNum = parseInt(id);
+
+  if (idNum < 0 || !Number.isInteger(idNum)){
+    res.status(400).json({
+      "error": "id must be a positive integer"
+    })
+  } else if (!notes[id]){
+      res.status(404).json({
+        "error": `cannot find note with id ${id}`
+      })
+  } else if (notes[id]){
+    delete notes[id];
+    res.sendStatus(204)
+  } else {
+    res.status(500).json({
+      "error": "An unexpected error occurred."
+    })
+  }
+})
+
+app.put('/api/notes/:id', (req, res)=>{
+  const id = req.params.id;
+  const contentEdit = req.body;
+
+  if (parseInt(id) < 0 || !Number.isInteger(parseInt(id))) {
+    res.status(400).json({
+      "error": "id must be a positive integer"
+    })
+  } else if(!contentEdit){
+    res.status(400).json({
+      "error": "content is a required field"
+    })
+  } else if (!notes[id] && contentEdit){
+    res.status(404).json({
+      "error": `cannot find note with id ${id}`
+    })
+  } else if (notes[id] && contentEdit){
+    notes[id] = contentEdit;
+    contentEdit.id = id;
+    res.status(200).json(notes[id]);
+  } else {
+    res.status(500).json({
+      "error": "An unexpected error occurred."
+    })
   }
 })
 
