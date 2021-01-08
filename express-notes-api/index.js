@@ -32,12 +32,20 @@ app.post('/api/notes', (req, res) => {
   const newNote = req.body;
   let uid = nextId;
 
-  if (JSON.stringify(newNote) === '{}'){
-    res.status(400).json({ "error": "content is a required field" })
-  } else if (req.body) {
+  if (newNote.content){
     notes[uid] = newNote;
     newNote.id = nextId++;
     res.status(201).json(newNote);
+
+    let data = JSON.stringify(content, null, 2);
+
+    fs.writeFile('data.json', data, (err) => {
+      if (err) {
+        throw err
+      };
+    });
+  } else if (!newNote.content) {
+    res.status(400).json({ "error": "content is a required field" })
   } else {
     res.status(500).json({ "error": "An unexpected error occurred." })
   }
@@ -55,13 +63,16 @@ app.delete('/api/notes/:id', (req, res) => {
       res.status(404).json({
         "error": `cannot find note with id ${id}`
       })
-  } else if (notes[id]){
-    delete notes[id];
-    res.sendStatus(204)
   } else {
-    res.status(500).json({
-      "error": "An unexpected error occurred."
-    })
+    delete notes[id];
+    res.sendStatus(204);
+    let data = JSON.stringify(content, null, 2);
+
+    fs.writeFile('data.json', data, (err) => {
+      if (err) {
+        throw err
+      };
+    });
   }
 })
 
@@ -73,18 +84,25 @@ app.put('/api/notes/:id', (req, res)=>{
     res.status(400).json({
       "error": "id must be a positive integer"
     })
-  } else if(!contentEdit){
+  } else if(!contentEdit.content){
     res.status(400).json({
       "error": "content is a required field"
     })
-  } else if (!notes[id] && contentEdit){
+  } else if (!notes[id] && contentEdit.content){
     res.status(404).json({
       "error": `cannot find note with id ${id}`
     })
-  } else if (notes[id] && contentEdit){
+  } else if (notes[id] && contentEdit.content){
     notes[id] = contentEdit;
     contentEdit.id = id;
     res.status(200).json(notes[id]);
+    let data = JSON.stringify(content, null, 2);
+
+    fs.writeFile('data.json', data, (err) => {
+      if (err) {
+        throw err
+      };
+    });
   } else {
     res.status(500).json({
       "error": "An unexpected error occurred."
