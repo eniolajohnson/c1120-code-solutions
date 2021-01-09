@@ -39,7 +39,7 @@ app.post('/api/notes', (req, res) => {
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err;
+        return res.status(500).json({ 'error': 'Unexpected Server Error' });
       };
       res.status(201).json(newNote);
     });
@@ -67,7 +67,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err;
+        return res.status(500).json({ 'error': 'Unexpected Server Error' });
       }
       res.sendStatus(204);
     });
@@ -98,7 +98,7 @@ app.put('/api/notes/:id', (req, res)=>{
 
     fs.writeFile('data.json', data, (err) => {
       if (err) {
-        throw err;
+        return res.status(500).json({ 'error': 'Unexpected Server Error' });
       }
       res.status(200).json(notes[id]);
     });
