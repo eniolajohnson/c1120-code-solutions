@@ -1,3 +1,40 @@
+.row{
+  display: flex;
+}
+
+.third-column {
+  width: 33%;
+  text-align: center;
+}
+
+.button{
+    font-size: 5rem;
+    font-size: 4em;
+    margin: auto;
+    color: black;
+}
+
+.button .fas {
+  margin-top: 39%;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.circle {
+  margin-right: 0.2em;
+  font-size: 0.9em;
+}
+
+.default{
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
 .view-container>.view{
   text-align: center;
 }
@@ -12,3 +49,4 @@ span{
 .hidden {
   display: none;
 }
+
