@@ -55,7 +55,7 @@ app.post('/api/grades', (req, res) => {
           error: `Cannot find grade with 'gradeId' ${gradeId}`
         });
       } else {
-        res.json(grade);
+        res.status(201).json(grade);
       }
     })
     .catch(err => {
@@ -98,7 +98,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
           error: `Cannot find grade with 'gradeId' ${gradeId}`
         });
       } else {
-        res.json(grade);
+        res.status(200).json(grade);
       }
     })
     .catch(err => {
@@ -135,7 +135,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
           error: `Cannot find grade with 'gradeId' ${gradeId}`
         });
       } else {
-        res.json(grade);
+        res.status(204).json(grade);
       }
     })
     .catch(err => {
