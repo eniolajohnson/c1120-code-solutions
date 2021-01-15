@@ -17,31 +17,25 @@ const traits = [
   { trainer: 'ash' }
 ];
 
-const sum = account.reduce((acc, currValue) => {
-  return acc += currValue.amount
+const sum = numbers.reduce((acc, currValue) => {
+  return acc += currValue
 }, 0)
 console.log('sum:', sum);
 
-const product = account.reduce((acc, currValue) => {
-  return acc *= currValue.amount
+const product = numbers.reduce((acc, currValue) => {
+  return acc *= currValue
 }, 1)
 console.log('product:', product);
 
-const deposit = account.reduce((acc, curr) => {
+const balance = account.reduce((acc, curr) => {
   if (curr.type === 'deposit') {
     acc += curr.amount
+  } else if (curr.type === 'withdrawal') {
+    acc -= curr.amount
   }
   return acc;
 }, 0)
 
-const withdrawal = account.reduce((acc, curr) => {
-  if (curr.type === 'withdrawal') {
-    acc += curr.amount
-  }
-  return acc;
-}, 0)
-
-const balance = deposit - withdrawal;
 console.log('balance:', balance)
 
 const composite = traits.reduce((acc, curr) => {
@@ -50,6 +44,3 @@ const composite = traits.reduce((acc, curr) => {
 }, {})
 
 console.log('composite', composite)
-
-
-
