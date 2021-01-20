@@ -1,0 +1,65 @@
+.button {
+    background-color: rgb(51, 3, 51);
+    color: white;
+    font-size: 1rem;
+    padding: 0.35rem;
+    width: 6rem;
+    border-radius: 2px;
+}
+
+.purplee,
+.lilac,
+.salmon,
+.default{
+  color: white;
+}
+
+.default{
+  background-color: teal;
+}
+
+.purple {
+  background-color: #330333;
+}
+
+.lilac {
+  background-color: #583b69;
+}
+
+.salmon {
+  background-color: salmon
+}
+
+.yellow,
+.orange,
+.white{
+  color: black;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}
+
+
+
+
+  { backgroundColor: 'yellow',
+    padding: '.25rem',
+    width: '6rem',
+    borderRadius: '2px'
+  },
+  {
+    backgroundColor: 'white',
+    padding: '.25rem',
+    width: '6rem',
+    borderRadius: '2px'
+  }
+];
