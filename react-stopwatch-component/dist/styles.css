@@ -1,0 +1,11 @@
+.circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 2px solid #0f0f0f;
+}
+
+.count{
+  text-align: center;
+  padding: 45% 0;
+}
