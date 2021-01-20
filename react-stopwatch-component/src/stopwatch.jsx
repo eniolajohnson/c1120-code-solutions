@@ -13,25 +13,35 @@ class Stopwatch extends React.Component{
   }
 
   add(){
-    this.setState({ count: this.state.count + 1 })
+    this.setState({ count: this.state.count + 1 });
+
   }
 
   tick() {
     setInterval(this.add, 1000);
-    this.setState({ start: !this.state.start })
-    console.log(this.state.start)
+    this.setState({ start: !this.state.start });
   }
+
 
   reset() {
     this.setState({ count: 0 })
   }
 
   render(){
-    return (
-      <div className='circle'>
-        <div className='count' onClick={this.tick}>Count = {this.state.count}</div>
+    if (this.state.start === true){
+      return <div>
+        works
       </div>
+      console.log('good');
+    } else {
+      return (
+        <div className='circle'>
+          <div className='count' onClick={this.tick}>Count = {this.state.count}</div>
+          {console.log(this.state.start)}
+        </div>
     )
+    }
+
   }
 }
 
