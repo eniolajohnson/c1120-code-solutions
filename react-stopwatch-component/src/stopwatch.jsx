@@ -29,15 +29,17 @@ class Stopwatch extends React.Component{
 
   render(){
     if (this.state.start === true){
-      return <div>
-        works
-      </div>
-      console.log('good');
+      return (
+        <div className='circle'>
+          <div className='count'>Count = {this.state.count}</div>
+          <button onClick={this.tick}>pause</button>
+        </div>
+      )
     } else {
       return (
         <div className='circle'>
-          <div className='count' onClick={this.tick}>Count = {this.state.count}</div>
-          {console.log(this.state.start)}
+          <div className='count'>Count = {this.state.count}</div>
+          <button onClick={this.tick}>play</button>
         </div>
     )
     }
