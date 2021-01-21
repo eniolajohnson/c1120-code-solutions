@@ -1,51 +1,72 @@
 import React from 'react';
 
 class Stopwatch extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       count: 0,
-      start: false
     }
     this.tick = this.tick.bind(this);
     this.add = this.add.bind(this);
     this.reset = this.reset.bind(this);
+    this.pause = this.pause.bind(this);
+    this.timeActions = this.timeActions.bind(this);
+    var intervalId = '';
   }
 
   add(){
     this.setState({ count: this.state.count + 1 });
-
   }
 
   tick() {
-    setInterval(this.add, 1000);
-    this.setState({ start: !this.state.start });
+    this.intervalId = setInterval(this.add, 1000);
+    this.setState({ reset: true });
   }
 
+  pause() {
+    clearInterval(this.intervalId);
+    this.setState({ count: this.state.count });
+    console.log('PAUSE clicked');
+  }
 
   reset() {
-    this.setState({ count: 0 })
+      this.setState({ count: 0 });
+  }
+
+  timeActions() {
+    const { count } = this.state;
+    if (count === 0) {
+      return (
+        <div className='circle'>
+          <div className='count'>{count}</div>
+          <button onClick={this.tick}>play</button>
+        </div>
+      )
+    }
+    if (count > 0) {
+      return (
+        <div className='circle'>
+          <div className='count' >{count}</div>
+          <button onClick={this.pause}>pause</button>
+        </div>
+      )
+    }
+
+    // if (count > 0) {
+    //   return (
+    //     <div className='circle'>
+    //       <div className='count' onClick={this.pause}>{count}</div>
+    //       <button>pause</button>
+    //     </div>
+    //   )
+    // }
   }
 
   render(){
-    if (this.state.start === true){
-      return (
-        <div className='circle'>
-          <div className='count'>Count = {this.state.count}</div>
-          <button onClick={this.tick}>pause</button>
-        </div>
-      )
-    } else {
-      return (
-        <div className='circle'>
-          <div className='count'>Count = {this.state.count}</div>
-          <button onClick={this.tick}>play</button>
-        </div>
+    return (
+      this.timeActions()
     )
-    }
-
   }
 }
-
 
 export default Stopwatch;
