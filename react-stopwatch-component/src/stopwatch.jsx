@@ -54,8 +54,8 @@ class Stopwatch extends React.Component{
 
     // if (count > 0) {
     //   return (
-    //     <div className='circle'>
-    //       <div className='count' onClick={this.pause}>{count}</div>
+    //     <div className='circle' onClick={this.reset}>
+    //       <div className='count'>{count}</div>
     //       <button>pause</button>
     //     </div>
     //   )
