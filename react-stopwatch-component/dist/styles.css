@@ -1,4 +1,5 @@
 .circle {
+  margin: auto;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -7,6 +8,15 @@
 
 .count{
   text-align: center;
-  padding: 45% 0;
-  font-size: 1rem;
+  padding: 40% 0;
+  font-size: 2.5rem;
+}
+
+.align {
+  text-align: center;
+  padding: 4%;
+}
+
+.fas {
+  font-size: 1.5rem;
 }

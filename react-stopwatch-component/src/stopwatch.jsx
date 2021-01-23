@@ -5,13 +5,16 @@ class Stopwatch extends React.Component{
     super(props);
     this.state = {
       count: 0,
+      pause: false
     }
+
     this.tick = this.tick.bind(this);
     this.add = this.add.bind(this);
     this.reset = this.reset.bind(this);
     this.pause = this.pause.bind(this);
     this.timeActions = this.timeActions.bind(this);
-    var intervalId = '';
+    let intervalId = '';
+
   }
 
   add(){
@@ -20,46 +23,55 @@ class Stopwatch extends React.Component{
 
   tick() {
     this.intervalId = setInterval(this.add, 1000);
-    this.setState({ reset: true });
   }
 
   pause() {
     clearInterval(this.intervalId);
-    this.setState({ count: this.state.count });
-    console.log('PAUSE clicked');
+    this.setState({
+      count: this.state.count,
+      pause: true
+     });
   }
 
   reset() {
-      this.setState({ count: 0 });
+    this.setState({ count: 0 });
   }
 
   timeActions() {
-    const { count } = this.state;
+    const { count, pause } = this.state;
     if (count === 0) {
       return (
         <div className='circle'>
           <div className='count'>{count}</div>
-          <button onClick={this.tick}>play</button>
-        </div>
-      )
-    }
-    if (count > 0) {
-      return (
-        <div className='circle'>
-          <div className='count' >{count}</div>
-          <button onClick={this.pause}>pause</button>
+          <div className='align'  onClick={this.tick}>
+            <i class="fas fa-play"></i>
+          </div>
         </div>
       )
     }
 
-    // if (count > 0) {
-    //   return (
-    //     <div className='circle' onClick={this.reset}>
-    //       <div className='count'>{count}</div>
-    //       <button>pause</button>
-    //     </div>
-    //   )
-    // }
+    if (count > 0 && pause === true) {
+      return (
+        <div className='circle'>
+          <div onClick={this.reset} className='count'>{count}</div>
+          <div className='align' onClick={this.tick}>
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      )
+    }
+
+    if (count > 0) {
+      return (
+        <div className='circle'>
+          <div onClick={this.reset} className='count'>{count}</div>
+          <div className='align'  onClick={this.pause}>
+            <i class="fas fa-pause"></i>
+          </div>
+        </div>
+      )
+    }
+
   }
 
   render(){
