@@ -1,0 +1,22 @@
+p {
+  color: red;
+  font-size: 80%;
+}
+
+label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1%;
+}
+
+.times {
+  margin-left: 1.5%;
+  color: red;
+  font-size: 1.2rem;
+}
+
+.tick {
+  margin-left: 1.5%;
+  color: green;
+  font-size: 1.2rem;
+}

@@ -1,12 +1,10 @@
 {
-  "name": "react-form-controls",
+  "name": "react-app-drawer-component",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "build": "webpack",
-
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
