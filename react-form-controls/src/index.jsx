@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class 
 class NewsletterForm extends React.Component{
   constructor(){
     super()
@@ -33,3 +34,4 @@ ReactDOM.render (
   <NewsletterForm />,
   document.getElementById('root')
 )
+
