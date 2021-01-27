@@ -13,7 +13,7 @@ class Stopwatch extends React.Component{
     this.reset = this.reset.bind(this);
     this.pause = this.pause.bind(this);
     this.timeActions = this.timeActions.bind(this);
-    let intervalId = '';
+    this.intervalId;
 
   }
 
