@@ -1,0 +1,14 @@
+USER CAN SIGN UP AND USER CAN SIGN IN
+
+These features originates from the AuthForm module. Its state is at first set to an empty username and password and is only updated by the user’s input value, captured by the listening event on the class.
+The user’s status either new or existing user also determines the kind of message that will be displayed on the screen.
+Once the user submits a request, either to sign in or sign up, a POST request is sent by the client to the server to store the details in the database. On sign up, the user is redirected to a sign in page while on sign in the user is fed with the return value of the onSignIn method of the props object (a context instance of the app.jsx module) having the result has its only argument (a home page with a gif).
+
+The AuthFrom module is then consumed by the Auth module which in turn is used by the App module.
+
+
+USER CAN STAY SIGNED IN AND USER CAN SIGN OUT
+
+SIGN IN: In the App.jsx module, there are methods that handle user’s actions, one of which is the handleSignIn, the handleSignIn method is mapped to the Sign In button that is beside the sign up button on the navbar. So when the user fills the form and submits, handleSignIn function stores the user’s information in the local storage and sets the this.state.user to the value of the user’s input thereby enabling the user to stay signed in.
+
+SIGN OUT: When the user has signed in, the navbar button reduces to just an option and that’s the sign out button. The sign out button gets its functionality from the handleSignOut method on the App.jsx module. Its function works in an opposite fashion to the handleSignIn method as it instantly removes the users information in the local-storage and sets the this.state.user value to null which causes the page to go back to its default value.
