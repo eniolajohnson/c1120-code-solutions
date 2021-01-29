@@ -122,9 +122,7 @@ export default class App extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.setState{
-        todos[todoId].isCompleted = !todos[todoId].isCompleted
-      })
+      body: JSON.stringify(this.state.todos[todoId].isCompleted = !this.state.todos[todoId].isCompleted)
     })
       .then(response => response.json())
       .then(todo => (todo => {
