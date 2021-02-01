@@ -1,0 +1,22 @@
+.hide {
+  display: none;
+}
+
+.headers {
+  font-family: monospace;
+  width: 35%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-left: 1%;
+  background-color: #c4c4c4;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.paragraphs {
+  font-family: monospace;
+  width: 35%;
+  padding-left: 1%;
+  font-size: 1.3rem;
+  border: 2px solid black;
+}
